@@ -167,7 +167,8 @@ public class MetodosOrdenamiento {
     }
 
     // Método de inserción con errores
-    // Error encontrado:
+    // Error encontrado: Basicamente en la condicion e intercambio se estaba comparando j con j en lugar de i con j e i con i mas 1 
+    // Solucion: Cambiar en la condicion los valores de i por los de j y hacer que i decresca  
     public int[] insercionSegundo(int[] arregloOriginal) {
 
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
@@ -176,9 +177,9 @@ public class MetodosOrdenamiento {
 
             int i = j - 1;
             
-            for (; i >= 0 && arreglo[j] > actual; ) {
-                arreglo[j + 1] = arreglo[i];
-                j--;
+            for (; i >= 0 && arreglo[i] > actual;i-- ) {
+                arreglo[i + 1] = arreglo[i];
+                
             }
             arreglo[i + 1] = actual;
         }
@@ -197,7 +198,7 @@ public class MetodosOrdenamiento {
 
             while (i >= 0 && arreglo[i] > key) {
                 arreglo[i + 1] = arreglo[i];
-                i++;
+                i--;
             }
             arreglo[i + 1] = key;
         }
