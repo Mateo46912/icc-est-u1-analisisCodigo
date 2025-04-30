@@ -12,7 +12,7 @@ public class Benchmarking {
         System.out.println(currentNano);
 
         mOrdenamiento = new MetodosOrdenamiento();
-        int[] arreglo = generarArregloAleatorio(100);
+        int[] arreglo = generarArregloAleatorio(10000000);
         Runnable tarea = () -> mOrdenamiento.burbujaTradicional(arreglo);
         double tiempoDuracionMilis = medirCurrentTimeMiles(tarea);
         double tiempoDuracionNano = medirNanoTime(tarea);
