@@ -195,7 +195,7 @@ public class MetodosOrdenamiento {
             int key = arreglo[j];
             int i = j-1;
 
-            while (i > 0 && arreglo[i] > key) {
+            while (i >= 0 && arreglo[i] > key) {
                 arreglo[i + 1] = arreglo[i];
                 i++;
             }
