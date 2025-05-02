@@ -1,5 +1,5 @@
 
-class Metodos_Ordenamiento:
+class MetodosOrdenamiento:
 
     def sort_bubble(self , array):
         arreglo = array.copy()
@@ -31,5 +31,27 @@ class Metodos_Ordenamiento:
                     iM = j
 
         return arreglo
+    
+
+    def sort_Shell (self, array):
+        arreglo = array.copy()
+        n = len(arreglo)
+        gap = n // 2 
+
+        while gap > 0:
+            for i in range(gap, n):
+                temp = arreglo[i]
+                j = i
+
+               
+                while j >= gap and arreglo[j - gap] > temp:
+                    arreglo[j] = arreglo[j - gap]
+                    j -= gap
+
+                arreglo[j] = temp
+            gap //= 2    
+        
+        return arreglo
+
 
 
